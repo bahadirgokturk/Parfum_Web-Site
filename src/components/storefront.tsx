@@ -85,11 +85,11 @@ export function Storefront({ locale, messages }: { locale: Locale; messages: Mes
       </div>
     </section>
 
-    <section className="collection-section" id="collection">
-      <div className="collection-intro"><p className="kicker">{messages.collection.kicker}</p><h2>{messages.collection.title}</h2><p>{messages.collection.note}</p></div>
-      <div className="product-grid">{catalog.map((product, index) => <article className={`product-card product-${index + 1}`} key={product.id}>
-        <Link className="product-image" href={`/${locale}/products/${product.slug}`}><Image src={product.image} alt={product.name} fill sizes="(max-width: 720px) 90vw, 45vw" style={{ objectPosition: product.imagePosition }} /></Link>
-        <div className="product-copy"><span>Prototip seçki</span><h3><Link href={`/${locale}/products/${product.slug}`}>{product.name}{product.volumeLabel ? ` · ${product.volumeLabel}` : ""}</Link></h3><button className="product-add" onClick={() => addToCart(product.id)}>{messages.collection.add}<Plus size={18} /></button></div>
+    <section className="collection-section home-commerce" id="collection">
+      <div className="collection-intro"><p className="kicker">{messages.collection.kicker}</p><h2>{messages.collection.title}</h2><div><p>{messages.collection.note}</p><Link href={`/${locale}/collection`}>{messages.collection.allProducts}<ArrowRight /></Link></div></div>
+      <div className="product-grid">{catalog.map((product) => <article className="product-card" key={product.id}>
+        <Link className="product-image" href={`/${locale}/products/${product.slug}`}><Image src={product.image} alt={product.name} fill sizes="(max-width: 760px) 50vw, 25vw" style={{ objectPosition: product.imagePosition }} /><span>{messages.collection.prototype}</span></Link>
+        <div className="product-copy"><Link className="home-product-info" href={`/${locale}/products/${product.slug}`}><small>Flawless Paris</small><h3>{product.name}</h3><span>{product.volumeLabel}</span><strong>{messages.collection.pricePending}</strong></Link><div className="home-product-actions"><button className="product-add" onClick={() => addToCart(product.id)}>{messages.collection.add}<Plus size={18} /></button><Link href={`/${locale}/products/${product.slug}`}>{messages.collection.details}</Link></div></div>
       </article>)}</div>
     </section>
 
