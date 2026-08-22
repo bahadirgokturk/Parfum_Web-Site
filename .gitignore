@@ -1,0 +1,29 @@
+# Bağımlılıklar yeniden kurulabilir; kaynak kontrolüne eklenmez.
+node_modules/
+.pnpm-store/
+
+# Next.js ve TypeScript tarafından üretilen derleme/önbellek dosyaları.
+.next/
+out/
+tsconfig.tsbuildinfo
+
+# Yerel ortam sırları hiçbir koşulda GitHub'a gönderilmez.
+.env
+.env.*
+!.env.example
+
+# Test, editör ve işletim sistemi çıktıları.
+coverage/
+playwright-report/
+test-results/
+qa-*.png
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Paket yöneticisi hata kayıtları.
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
