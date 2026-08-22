@@ -20,3 +20,10 @@ footer{background:#160307;text-align:center;padding:6rem 1.2rem 2rem}.footer-log
    çubuğunda uzun yerelleştirilmiş metin sabit kolonun dışına taşmaz. */
 .product-main-image img{object-fit:contain}
 @media(max-width:900px){.mobile-buy-bar{display:flex;width:100%;overflow:hidden}.mobile-buy-bar>div{flex:1;min-width:0;overflow:hidden}.mobile-buy-bar button{flex:0 0 150px;width:150px;padding:0 .5rem;font-size:.5rem;letter-spacing:.04em;white-space:normal}}
+
+/* Ürün görseli artık detay sayfasına giden bir Link'tir. Link varsayılan olarak
+   inline olduğu için yüksekliği yok sayılır; block yapmak `fill` görseline ölçü sağlar. */
+.product-image{display:block}
+
+/* Ürün adı bağlantı olsa da kartın marka tipografisini korur. */
+.product-copy h3 a{color:inherit;text-decoration:none}
